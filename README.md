@@ -14,7 +14,7 @@ Aplikasi ini sudah dipublish dan dapat dimainkan langsung tanpa instalasi:
 ## 📸 Tampilan Aplikasi
 
 <p align="center">
-  <img src="assets/screenshot.png" alt="Trivia Master AI Preview" width="480" style="border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);" />
+  <img src="assets/screenshot.png?raw=true&v=2" alt="Trivia Master AI Preview" width="480" style="border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);" />
 </p>
 
 ---
