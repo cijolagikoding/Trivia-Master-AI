@@ -4,6 +4,13 @@ Platform Kuis Trivia Interaktif Cerdas Berbasis AI Dinamis & Multi-Kategori berb
 
 ---
 
+## 🌐 Live Demo & Deployment
+
+Aplikasi ini sudah dipublish dan dapat dimainkan langsung tanpa instalasi:
+👉 **[Mainkan Trivia Master AI](https://cijolagikoding.github.io/Trivia-Master-AI/)**
+
+---
+
 ## 📸 Tampilan Aplikasi
 
 <p align="center">
@@ -38,7 +45,10 @@ Fitur unggulan dari platform ini adalah fleksibilitas topik yang tak terbatas; p
 
 ---
 
-## 💻 Cara Menjalankan
-1. Clone repositori ini atau unduh file ZIP.
-2. Buka file `index.html` langsung di browser favoritmu (Chrome, Edge, Firefox, Safari).
+## 💻 Cara Menjalankan Secara Lokal
+1. Clone repositori ini:
+   ```bash
+   git clone https://github.com/cijolagikoding/Trivia-Master-AI.git
+   ```
+2. Buka folder proyek dan jalankan file `index.html` langsung di browser favoritmu (Chrome, Edge, Firefox, Safari).
 3. Tidak memerlukan instalasi Node.js, server backend, ataupun build tools.
