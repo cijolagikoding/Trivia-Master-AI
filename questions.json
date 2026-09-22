@@ -1,0 +1,226 @@
+{
+  "categories": [
+    { "id": "all", "name": "Campuran / Semua Topik 🎲" },
+    { "id": "umum", "name": "Pengetahuan Umum & Indonesia 🇮🇩" },
+    { "id": "teknologi", "name": "Teknologi & Komputer 💻" },
+    { "id": "sains", "name": "Sains & Alam Semesta 🪐" },
+    { "id": "populer", "name": "Pop Culture & Hiburan 🎬" },
+    { "id": "sejarah", "name": "Sejarah & Budaya 📜" }
+  ],
+  "questions": [
+    {
+      "category": "umum",
+      "difficulty": "easy",
+      "question": "Apa nama ibu kota resmi masa depan Indonesia yang berlokasi di Kalimantan Timur?",
+      "options": ["Nusantara (IKN)", "Balikpapan", "Samarinda", "Banjarmasin"],
+      "answer": "Nusantara (IKN)"
+    },
+    {
+      "category": "umum",
+      "difficulty": "easy",
+      "question": "Pulau terbesar di wilayah negara Indonesia yang seluruh daratannya milik Indonesia adalah?",
+      "options": ["Sumatera", "Jawa", "Sulawesi", "Papua"],
+      "answer": "Sumatera"
+    },
+    {
+      "category": "umum",
+      "difficulty": "medium",
+      "question": "Candi bercorak Buddha terbesar di dunia yang terletak di Jawa Tengah adalah?",
+      "options": ["Candi Borobudur", "Candi Prambanan", "Candi Mendut", "Candi Sewu"],
+      "answer": "Candi Borobudur"
+    },
+    {
+      "category": "umum",
+      "difficulty": "medium",
+      "question": "Siapakah pencipta lagu kebangsaan 'Indonesia Raya'?",
+      "options": ["Wage Rudolf Supratman", "Ismail Marzuki", "Kusbini", "C. Simanjuntak"],
+      "answer": "Wage Rudolf Supratman"
+    },
+    {
+      "category": "umum",
+      "difficulty": "hard",
+      "question": "Di provinsi manakah Danau Matano, danau terdalam di Indonesia dan Asia Tenggara, berada?",
+      "options": ["Sulawesi Selatan", "Sulawesi Tengah", "Sumatera Utara", "Papua"],
+      "answer": "Sulawesi Selatan"
+    },
+    {
+      "category": "umum",
+      "difficulty": "hard",
+      "question": "Taman Nasional Komodo pertama kali didirikan pada tahun berapa?",
+      "options": ["1980", "1975", "1986", "1992"],
+      "answer": "1980"
+    },
+
+    {
+      "category": "teknologi",
+      "difficulty": "easy",
+      "question": "Bahasa pemrograman apa yang berjalan secara bawaan (native) di dalam browser web?",
+      "options": ["JavaScript", "Python", "C++", "Java"],
+      "answer": "JavaScript"
+    },
+    {
+      "category": "teknologi",
+      "difficulty": "easy",
+      "question": "Singkatan dari apakah 'HTML' dalam pembuatan halaman web?",
+      "options": ["HyperText Markup Language", "HighText Machine Language", "Hyperlink and Text Management Level", "Home Tool Markup Language"],
+      "answer": "HyperText Markup Language"
+    },
+    {
+      "category": "teknologi",
+      "difficulty": "medium",
+      "question": "Sistem operasi open-source berbasis kernel Linux pertama kali dikembangkan oleh siapa?",
+      "options": ["Linus Torvalds", "Steve Wozniak", "Bill Gates", "Dennis Ritchie"],
+      "answer": "Linus Torvalds"
+    },
+    {
+      "category": "teknologi",
+      "difficulty": "medium",
+      "question": "Protokol keamanan web yang menggunakan enkripsi SSL/TLS ditandai dengan singkatan apa?",
+      "options": ["HTTPS", "HTTP", "FTP", "SSH"],
+      "answer": "HTTPS"
+    },
+    {
+      "category": "teknologi",
+      "difficulty": "hard",
+      "question": "Berapakah kompleksitas waktu rata-rata (average time complexity) dari algoritma QuickSort?",
+      "options": ["O(n log n)", "O(n²)", "O(n)", "O(log n)"],
+      "answer": "O(n log n)"
+    },
+    {
+      "category": "teknologi",
+      "difficulty": "hard",
+      "question": "Konsep arsitektur CSS yang memisahkan struktur menjadi Block, Element, dan Modifier disingkat dengan?",
+      "options": ["BEM", "SMACSS", "OOCSS", "ATOMIC"],
+      "answer": "BEM"
+    },
+
+    {
+      "category": "sains",
+      "difficulty": "easy",
+      "question": "Planet apakah yang memiliki julukan 'Planet Merah' di tata surya kita?",
+      "options": ["Mars", "Venus", "Jupiter", "Merkurius"],
+      "answer": "Mars"
+    },
+    {
+      "category": "sains",
+      "difficulty": "easy",
+      "question": "Unsur kimia apakah yang memiliki simbol 'O' pada tabel periodik?",
+      "options": ["Oksigen", "Osmium", "Oganeson", "Ozon"],
+      "answer": "Oksigen"
+    },
+    {
+      "category": "sains",
+      "difficulty": "medium",
+      "question": "Bagian sel yang sering dijuluki sebagai 'pembangkit tenaga' (powerhouse of the cell) adalah?",
+      "options": ["Mitokondria", "Ribosom", "Nukleus", "Badan Golgi"],
+      "answer": "Mitokondria"
+    },
+    {
+      "category": "sains",
+      "difficulty": "medium",
+      "question": "Berapa perkiraan kecepatan rambat cahaya di ruang hampa udara?",
+      "options": ["300.000 km/detik", "150.000 km/detik", "500.000 km/detik", "1.000.000 km/detik"],
+      "answer": "300.000 km/detik"
+    },
+    {
+      "category": "sains",
+      "difficulty": "hard",
+      "question": "Hukum gravitasi umum pertama kali dirumuskan secara matematis oleh ilmuwan siapa?",
+      "options": ["Sir Isaac Newton", "Albert Einstein", "Galileo Galilei", "Johannes Kepler"],
+      "answer": "Sir Isaac Newton"
+    },
+    {
+      "category": "sains",
+      "difficulty": "hard",
+      "question": "Apakah nama partikel elementer pembawa gaya elektromagnetik?",
+      "options": ["Foton", "Gluon", "Boson W", "Graviton"],
+      "answer": "Foton"
+    },
+
+    {
+      "category": "populer",
+      "difficulty": "easy",
+      "question": "Siapakah nama maskot kuning berbentuk tikus listrik legendaris dari waralaba Pokémon?",
+      "options": ["Pikachu", "Raichu", "Charmander", "Squirtle"],
+      "answer": "Pikachu"
+    },
+    {
+      "category": "populer",
+      "difficulty": "easy",
+      "question": "Dalam serial One Piece, apa nama kapal pertama yang digunakan oleh kelompok Bajak Laut Topi Jerami?",
+      "options": ["Going Merry", "Thousand Sunny", "Red Force", "Moby Dick"],
+      "answer": "Going Merry"
+    },
+    {
+      "category": "populer",
+      "difficulty": "medium",
+      "question": "Siapa aktor Hollywood yang memerankan karakter Tony Stark alias Iron Man di Marvel Cinematic Universe?",
+      "options": ["Robert Downey Jr.", "Chris Evans", "Mark Ruffalo", "Chris Hemsworth"],
+      "answer": "Robert Downey Jr."
+    },
+    {
+      "category": "populer",
+      "difficulty": "medium",
+      "question": "Game bergenre battle royale pertama yang mempopulerkan istilah 'Winner Winner Chicken Dinner' adalah?",
+      "options": ["PUBG", "Free Fire", "Fortnite", "Apex Legends"],
+      "answer": "PUBG"
+    },
+    {
+      "category": "populer",
+      "difficulty": "hard",
+      "question": "Studio animasi Jepang legendaris yang memproduksi film 'Spirited Away' dan 'My Neighbor Totoro' bernama?",
+      "options": ["Studio Ghibli", "Toei Animation", "MAPPA", "Ufotable"],
+      "answer": "Studio Ghibli"
+    },
+    {
+      "category": "populer",
+      "difficulty": "hard",
+      "question": "Siapa komposer di balik soundtrack musik epik film 'Interstellar' dan 'Inception'?",
+      "options": ["Hans Zimmer", "John Williams", "Ennio Morricone", "Alan Silvestri"],
+      "answer": "Hans Zimmer"
+    },
+
+    {
+      "category": "sejarah",
+      "difficulty": "easy",
+      "question": "Pada tanggal, bulan, dan tahun berapakah Proklamasi Kemerdekaan Republik Indonesia dibacakan?",
+      "options": ["17 Agustus 1945", "18 Agustus 1945", "17 Agustus 1944", "1 Juni 1945"],
+      "answer": "17 Agustus 1945"
+    },
+    {
+      "category": "sejarah",
+      "difficulty": "easy",
+      "question": "Bangunan megah Piramida Agung Giza yang termasuk keajaiban dunia kuno terletak di negara mana?",
+      "options": ["Mesir", "Yunani", "Irak", "Turki"],
+      "answer": "Mesir"
+    },
+    {
+      "category": "sejarah",
+      "difficulty": "medium",
+      "question": "Patih terkenal dari Kerajaan Majapahit yang mengucapkan 'Sumpah Palapa' bernama?",
+      "options": ["Gajah Mada", "Hayam Wuruk", "Kertanegara", "Ken Arok"],
+      "answer": "Gajah Mada"
+    },
+    {
+      "category": "sejarah",
+      "difficulty": "medium",
+      "question": "Kapal pesiar mewah Titanic tenggelam setelah menabrak gunung es pada tahun berapa?",
+      "options": ["1912", "1905", "1918", "1923"],
+      "answer": "1912"
+    },
+    {
+      "category": "sejarah",
+      "difficulty": "hard",
+      "question": "Revolusi Prancis yang menggulingkan monarki absolut dimulai dengan penyerbuan penjara Bastille pada tahun?",
+      "options": ["1789", "1776", "1799", "1804"],
+      "answer": "1789"
+    },
+    {
+      "category": "sejarah",
+      "difficulty": "hard",
+      "question": "Konferensi Asia-Afrika (KAA) yang bersejarah diselenggarakan pertama kali pada tahun 1955 di kota?",
+      "options": ["Bandung", "Jakarta", "Yogyakarta", "Bogor"],
+      "answer": "Bandung"
+    }
+  ]
+}

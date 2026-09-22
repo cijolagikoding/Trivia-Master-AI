@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia Master AI - Kuis Interaktif Cerdas Indonesia</title>
+    <meta name="description" content="Aplikasi kuis trivia interaktif berbasis AI berbahasa Indonesia dengan topik fleksibel, timer dinamis, dan efek suara.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Animated Gradient Orbs -->
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-orb orb-3"></div>
+
+    <div class="app-container">
+        <!-- TOP APP BAR -->
+        <div class="top-bar">
+            <div class="brand">
+                <span class="brand-icon">⚡</span>
+                <span class="brand-name">TriviaMaster <strong>AI</strong></span>
+            </div>
+            <div class="top-actions">
+                <button id="sound-toggle" class="icon-btn" title="Aktifkan/Matikan Suara" aria-label="Toggle Suara">
+                    <span id="sound-icon">🔊</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- 1. SETUP SCREEN -->
+        <div id="setup-screen" class="screen active">
+            <div class="hero-badge">✨ Kuis Cerdas Tanpa API Key</div>
+            <header>
+                <h1>Tantang Otakmu Hari Ini! 🧠</h1>
+                <p>Ketik topik apapun yang kamu suka atau pilih kategori populer di bawah ini.</p>
+            </header>
+
+            <form id="setup-form">
+                <!-- Topik Input -->
+                <div class="form-group">
+                    <label for="topic-input">Ketik Topik Kuis Bebas</label>
+                    <div class="input-with-icon">
+                        <span class="input-icon">💡</span>
+                        <input type="text" id="topic-input" placeholder="Misal: Kopi Nusantara, Naruto, Sejarah Majapahit, AI...">
+                    </div>
+                </div>
+
+                <!-- Category Chips -->
+                <div class="form-group">
+                    <label>Atau Pilih Kategori Cepat</label>
+                    <div class="category-chips">
+                        <button type="button" class="chip active" data-cat="all">🎲 Semua Acak</button>
+                        <button type="button" class="chip" data-cat="umum">🇮🇩 Indonesia & Umum</button>
+                        <button type="button" class="chip" data-cat="teknologi">💻 Teknologi & AI</button>
+                        <button type="button" class="chip" data-cat="sains">🪐 Sains & Alam</button>
+                        <button type="button" class="chip" data-cat="populer">🎬 Game & Anime</button>
+                        <button type="button" class="chip" data-cat="sejarah">📜 Sejarah & Budaya</button>
+                    </div>
+                </div>
+
+                <!-- Settings Row: Soal & Timer -->
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label for="question-count">Jumlah Soal</label>
+                        <select id="question-count" class="form-select">
+                            <option value="5" selected>5 Soal (Cepat)</option>
+                            <option value="10">10 Soal (Standar)</option>
+                            <option value="15">15 Soal (Maraton)</option>
+                        </select>
+                    </div>
+                    <div class="form-group half">
+                        <label for="timer-mode">Waktu / Soal</label>
+                        <select id="timer-mode" class="form-select">
+                            <option value="15" selected>15 Detik ⚡</option>
+                            <option value="30">30 Detik ⏱️</option>
+                            <option value="0">Tanpa Batas 🧘</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-glow">
+                    <span>Mulai Kuis Sekarang</span>
+                    <span class="btn-arrow">→</span>
+                </button>
+            </form>
+
+            <div class="stats-footer">
+                <div class="stat-item">
+                    <span class="stat-number" id="stat-high-score">0</span>
+                    <span class="stat-label">Skor Tertinggi</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number" id="stat-quizzes-played">0</span>
+                    <span class="stat-label">Kuis Dimainkan</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. LOADING SCREEN -->
+        <div id="loading-screen" class="screen">
+            <div class="loader-container">
+                <div class="loader-ring"></div>
+                <div class="loader-core">🧠</div>
+            </div>
+            <h2 id="loading-title">AI Sedang Meracik Soal...</h2>
+            <p id="loading-desc">Menganalisis topik & membuat soal pilihan ganda seru untukmu.</p>
+            <div class="loading-bar">
+                <div class="loading-bar-fill"></div>
+            </div>
+        </div>
+
+        <!-- 3. QUIZ SCREEN -->
+        <div id="quiz-screen" class="screen">
+            <!-- Header bar with progress & timer -->
+            <div class="quiz-status-bar">
+                <div class="status-left">
+                    <span class="badge badge-topic" id="current-topic-badge">Umum</span>
+                    <span class="badge badge-source" id="source-badge">⚡ AI Generated</span>
+                    <span class="badge badge-streak" id="streak-badge">🔥 <span id="streak-count">0</span></span>
+                </div>
+                <div class="status-right">
+                    <div class="timer-container" id="timer-container">
+                        <span class="timer-icon">⏱️</span>
+                        <span id="timer-text">15s</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="progress-bar-wrapper">
+                <div class="progress-bar-track">
+                    <div class="progress-bar-fill" id="progress-fill" style="width: 20%;"></div>
+                </div>
+                <div class="progress-labels">
+                    <span id="q-counter-label">Soal 1 dari 5</span>
+                    <span id="score-live-label">Skor: <strong id="score-display">0</strong></span>
+                </div>
+            </div>
+
+            <!-- Question Card -->
+            <div class="question-container" id="question-container">
+                <h2 id="question-text">Memuat pertanyaan...</h2>
+            </div>
+
+            <!-- Options Grid -->
+            <div class="options-container" id="options-container">
+                <!-- Option buttons dynamically generated -->
+            </div>
+
+            <!-- Explanation Box (Appears after answer) -->
+            <div class="explanation-card" id="explanation-card" style="display: none;">
+                <div class="exp-header">
+                    <span class="exp-icon" id="exp-icon">💡</span>
+                    <strong id="exp-title">Penjelasan:</strong>
+                </div>
+                <p id="exp-text">Penjelasan detail jawaban.</p>
+            </div>
+        </div>
+
+        <!-- 4. RESULT SCREEN -->
+        <div id="result-screen" class="screen">
+            <div class="result-badge" id="result-badge">🏆 Hasil Kuis</div>
+            <h1 id="result-title">Luar Biasa!</h1>
+            <p id="result-subtitle">Kamu telah menyelesaikan seluruh kuis.</p>
+
+            <!-- Circular Score Card -->
+            <div class="score-circle-wrapper">
+                <svg class="score-circle-svg" viewBox="0 0 120 120">
+                    <circle class="circle-bg" cx="60" cy="60" r="50"></circle>
+                    <circle class="circle-progress" id="score-circle-bar" cx="60" cy="60" r="50"></circle>
+                </svg>
+                <div class="score-circle-content">
+                    <span class="score-value" id="final-score-text">0/5</span>
+                    <span class="score-pct" id="final-pct-text">0%</span>
+                </div>
+            </div>
+
+            <!-- Summary Chips -->
+            <div class="result-summary-grid">
+                <div class="res-card">
+                    <span class="res-card-icon">✅</span>
+                    <span class="res-card-val" id="res-correct-count">0</span>
+                    <span class="res-card-lbl">Benar</span>
+                </div>
+                <div class="res-card">
+                    <span class="res-card-icon">❌</span>
+                    <span class="res-card-val" id="res-wrong-count">0</span>
+                    <span class="res-card-lbl">Salah</span>
+                </div>
+                <div class="res-card">
+                    <span class="res-card-icon">🔥</span>
+                    <span class="res-card-val" id="res-max-streak">0</span>
+                    <span class="res-card-lbl">Max Streak</span>
+                </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="result-actions">
+                <button id="btn-restart" class="btn btn-primary btn-glow">
+                    <span>Main Lagi</span>
+                    <span class="btn-arrow">🔄</span>
+                </button>
+                <button id="btn-review" class="btn btn-secondary">
+                    <span>Lihat Pembahasan Soal</span>
+                    <span class="btn-arrow">📖</span>
+                </button>
+                <button id="btn-share" class="btn btn-outline">
+                    <span>Bagikan Skor</span>
+                    <span class="btn-arrow">📋</span>
+                </button>
+            </div>
+
+            <!-- Review Section (Toggleable) -->
+            <div id="review-section" class="review-section" style="display: none;">
+                <h3>Pembahasan Kuis:</h3>
+                <div id="review-list" class="review-list">
+                    <!-- Dynamic review items -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">Skor berhasil disalin ke clipboard!</div>
+
+    <script src="main.js?v=8"></script>
+</body>
+</html>
